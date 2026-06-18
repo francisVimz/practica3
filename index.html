@@ -1,1 +1,119 @@
-hola mundo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a12;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    @keyframes rgb-text {
+      0%   { color: #ff3a3a; text-shadow: 0 0 30px #ff3a3a, 0 0 60px #ff3a3a; }
+      16%  { color: #ff9900; text-shadow: 0 0 30px #ff9900, 0 0 60px #ff9900; }
+      33%  { color: #ffe600; text-shadow: 0 0 30px #ffe600, 0 0 60px #ffe600; }
+      50%  { color: #00ff88; text-shadow: 0 0 30px #00ff88, 0 0 60px #00ff88; }
+      66%  { color: #00ccff; text-shadow: 0 0 30px #00ccff, 0 0 60px #00ccff; }
+      83%  { color: #cc44ff; text-shadow: 0 0 30px #cc44ff, 0 0 60px #cc44ff; }
+      100% { color: #ff3a3a; text-shadow: 0 0 30px #ff3a3a, 0 0 60px #ff3a3a; }
+    }
+
+    @keyframes border-rgb {
+      0%   { border-color: #ff3a3a; box-shadow: 0 0 20px #ff3a3a44, inset 0 0 30px #ff3a3a11; }
+      16%  { border-color: #ff9900; box-shadow: 0 0 20px #ff990044, inset 0 0 30px #ff990011; }
+      33%  { border-color: #ffe600; box-shadow: 0 0 20px #ffe60044, inset 0 0 30px #ffe60011; }
+      50%  { border-color: #00ff88; box-shadow: 0 0 20px #00ff8844, inset 0 0 30px #00ff8811; }
+      66%  { border-color: #00ccff; box-shadow: 0 0 20px #00ccff44, inset 0 0 30px #00ccff11; }
+      83%  { border-color: #cc44ff; box-shadow: 0 0 20px #cc44ff44, inset 0 0 30px #cc44ff11; }
+      100% { border-color: #ff3a3a; box-shadow: 0 0 20px #ff3a3a44, inset 0 0 30px #ff3a3a11; }
+    }
+
+    @keyframes dot-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50%       { transform: scale(1.4); opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    .rgb-scene {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .rgb-card {
+      background: #12121e;
+      border: 2px solid #ff3a3a;
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      text-align: center;
+      animation: border-rgb 3s linear infinite, float 4s ease-in-out infinite;
+    }
+
+    .rgb-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      animation: rgb-text 3s linear infinite;
+    }
+
+    .rgb-sub {
+      font-size: 0.9rem;
+      color: #555;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      font-family: monospace;
+    }
+
+    .dots { display: flex; gap: 12px; }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: dot-pulse 1.5s ease-in-out infinite;
+    }
+
+    .d1 { background: #ff3a3a; animation-delay: 0s; }
+    .d2 { background: #00ff88; animation-delay: 0.5s; }
+    .d3 { background: #00ccff; animation-delay: 1s; }
+    .d4 { background: #cc44ff; animation-delay: 1.5s; }
+    .d5 { background: #ffe600; animation-delay: 0.25s; }
+  </style>
+</head>
+<body>
+  <div class="rgb-scene">
+    <div class="dots">
+      <div class="dot d1"></div>
+      <div class="dot d5"></div>
+      <div class="dot d2"></div>
+      <div class="dot d3"></div>
+      <div class="dot d4"></div>
+    </div>
+    <div class="rgb-card">
+      <h1 class="rgb-title">¡Hola, Mundo!</h1>
+      <p class="rgb-sub"></p>
+    </div>
+    <div class="dots">
+      <div class="dot d4"></div>
+      <div class="dot d3"></div>
+      <div class="dot d2"></div>
+      <div class="dot d5"></div>
+      <div class="dot d1"></div>
+    </div>
+  </div>
+</body>
+</html>
